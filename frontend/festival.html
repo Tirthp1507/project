@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Festival Greeting Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="dashboard.html" class="back-link">&larr; Back to Dashboard</a>
+        <h1>Festival Greeting</h1>
+        <p class="subtitle">Create a beautiful, branded poster for any occasion.</p>
+        
+        <form id="festival-form">
+            <input type="text" id="business-name" placeholder="Your Business Name" required>
+            <input type="text" id="location" placeholder="Your Location (e.g., Ahmedabad)" required>
+            
+            <select id="festival" required>
+                <option value="Diwali">Diwali</option>
+                <option value="Holi">Holi</option>
+                <option value="Navratri">Navratri</option>
+                <option value="Christmas">Christmas</option>
+                <option value="Eid">Eid</option>
+                <option value="Ganesh Chaturthi">Ganesh Chaturthi</option>
+            </select>
+
+            <input type="text" id="greeting" placeholder="Your Greeting (e.g., Happy Diwali)" required>
+
+            <select id="style" required>
+                <option value="digital-art" selected>Digital Art</option>
+                <option value="photographic">Photographic</option>
+                <option value="analog-film">Analog Film</option>
+            </select>
+            
+            <select id="color-palette">
+                <option value="auto" selected>Automatic (from Logo)</option>
+                <option value="warm">Warm Colors</option>
+                <option value="cool">Cool Colors</option>
+                <option value="vibrant">Vibrant Colors</option>
+                <option value="pastel">Pastel Colors</option>
+            </select>
+
+            <div class="file-input-container">
+                <label for="logo-upload">Upload Your Logo (Optional):</label>
+                <input type="file" id="logo-upload" accept="image/*">
+            </div>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="use-logo-colors" checked>
+                <label for="use-logo-colors">Use logo colors for poster design</label>
+            </div>
+
+            <button type="submit" id="generate-button" class="primary-button">Generate Poster</button>
+        </form>
+
+        <div id="result-container">
+            <p id="loading-message" style="display: none;">Generating your poster... this may take a moment.</p>
+            <img id="poster-image" src="" alt="Generated Poster" style="display: none;">
+            <button id="download-button" class="secondary-button" style="display: none;" disabled>Download Poster</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+

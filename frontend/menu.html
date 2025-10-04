@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Creator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <a href="dashboard.html" class="back-link">&larr; Back to Dashboard</a>
+        <h1>Menu Creator</h1>
+        <p class="subtitle">Design a professional, print-ready menu in seconds.</p>
+
+        <form id="menu-form">
+            <input type="text" id="business-name" placeholder="Your Business Name" required>
+            <input type="text" id="contact-info" placeholder="Contact Info (e.g., Phone or Address)" required>
+            
+            <div class="file-input-container">
+                <label for="logo-upload">Upload Your Logo (Required):</label>
+                <input type="file" id="logo-upload" accept="image/*" required>
+            </div>
+
+            <hr class="form-divider">
+            
+            <h3>Menu Items</h3>
+            <div id="menu-items-container">
+                <!-- Menu items will be added here by JavaScript -->
+            </div>
+            
+            <button type="button" id="add-item-button" class="tertiary-button">Add Menu Item</button>
+
+            <hr class="form-divider">
+
+            <button type="submit" id="generate-button" class="primary-button">Generate Menu</button>
+        </form>
+
+        <div id="result-container">
+            <p id="loading-message" style="display: none;">Generating your menu... this may take a moment.</p>
+            <img id="poster-image" src="" alt="Generated Menu" style="display: none;">
+            <button id="download-button" class="secondary-button" style="display: none;" disabled>Download Menu</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
