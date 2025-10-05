@@ -13,6 +13,16 @@ from rembg import remove
 load_dotenv()
 app = Flask(__name__, static_folder='../frontend', static_url_path='')
 
+@app.route("/")
+def serve_index():
+    """Serve main index.html from frontend."""
+    return send_from_directory("../frontend", "index.html")
+
+@app.route("/<path:path>")
+def serve_static_files(path):
+    """Serve other static assets (JS, CSS, images) from frontend folder."""
+    return send_from_directory("../frontend", path)
+
 # --- LOAD API KEY ---
 STABILITY_API_KEY = os.getenv("STABILITY_API_KEY")
 if not STABILITY_API_KEY:
